@@ -4,7 +4,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
- 
+  const location = useLocation();
   const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
 
   // --- Komponen Gambar Logo ---
@@ -49,13 +49,16 @@ const Navbar = () => {
             className="w-full py-2 pl-4 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 transition duration-150"
           />
           <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-            {}
+            {/* Menggunakan emoji atau simbol teks sebagai ganti Lucide Icon */}
             🔍 
           </div>
         </div>
 
         {/* Tombol Akses */}
         <div className="flex space-x-3">
+          <Link to="/login" className="px-5 py-2 text-pink-500 border border-pink-500 rounded-lg hover:bg-pink-50 transition duration-150 font-medium">
+            Masuk
+          </Link>
           <Link to="/register" className="px-5 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition duration-150 font-medium">
             Daftar
           </Link>
