@@ -1,4 +1,47 @@
 {
-  "users": [],
-  "products": []
+  "users": [
+    {
+      "id": "9e10",
+      "name": "Karen Wendry",
+      "email": "s22310244@student.unklab.ac.id",
+      "password": "kkakka20"
+    },
+    {
+      "id": "c332",
+      "name": "aku cantik",
+      "email": "s123@student.unklab.ac.id",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "b28b",
+      "name": "karwen",
+      "email": "s22310888@student.unklab.ac.id",
+      "password": "123123",
+      "role": "user"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Laptop Acer Aspire",
+      "price": 7500000,
+      "description": "Laptop untuk kebutuhan kuliah dan kerja",
+      "image": "/laptop.png"
+    },
+    {
+      "id": "2",
+      "name": "Buku Tulis Polos",
+      "price": 15000,
+      "description": "Buku tulis 40 lembar",
+      "image": "/buku.png"
+    },
+    {
+      "id": "3",
+      "name": "Ransel Kuliah",
+      "price": 120000,
+      "description": "Tas ransel untuk laptop 14 inch",
+      "image": "/ransel.png"
+    }
+  ]
 }
