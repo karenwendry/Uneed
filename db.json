@@ -19,6 +19,20 @@
       "email": "s22310888@student.unklab.ac.id",
       "password": "123123",
       "role": "user"
+    },
+    {
+      "id": "95bf",
+      "name": "m",
+      "email": "s22310299@student.unklab.ac.id",
+      "password": "kkakka20",
+      "role": "user"
+    },
+    {
+      "id": "5f63",
+      "name": "taehyung",
+      "email": "s22310240@student.unklab.ac.id",
+      "password": "kkakka20",
+      "role": "user"
     }
   ],
   "products": [
