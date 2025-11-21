@@ -8,7 +8,7 @@ export const register = async (name, email, password) => {
   const domain = email.substring(email.lastIndexOf('@') + 1);
   
   if (domain !== ALLOWED_DOMAIN) {
-    throw new Error(`Pendaftaran hanya diperbolehkan untuk mahasiswa Universitas Klabat.`);
+    throw new Error(`Pendaftaran hanya diperbolehkan untuk mahasiswa Universitas.`);
   }
   // ----------------------------------------
 
