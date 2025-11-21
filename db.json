@@ -33,6 +33,13 @@
       "email": "s22310240@student.unklab.ac.id",
       "password": "kkakka20",
       "role": "user"
+    },
+    {
+      "id": "f797",
+      "name": "karan kirin",
+      "email": "s22310211@student.unklab.ac.id",
+      "password": "890890",
+      "role": "user"
     }
   ],
   "products": [
