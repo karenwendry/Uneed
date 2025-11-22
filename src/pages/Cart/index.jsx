@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // 1. Tambah useNavigate
 import Navbar from "../../components/Navbar";
 import { Trash2, Minus, Plus, ShoppingBag } from "lucide-react";
 
 const Cart = () => {
+  const navigate = useNavigate(); // 2. Inisialisasi hook navigate
   const [cartItems, setCartItems] = useState([]);
-
 
   const formatRupiah = (price) => {
     return new Intl.NumberFormat("id-ID", {
@@ -15,15 +15,18 @@ const Cart = () => {
     }).format(price);
   };
 
-  
   useEffect(() => {
     const rawCart = JSON.parse(localStorage.getItem("cart")) || [];
+    // Logika Grouping: Menggabungkan item yang ID + Varian-nya sama
     const groupedItems = rawCart.reduce((acc, item) => {
-      const existingItem = acc.find((i) => i.id === item.id);
+      // Cek berdasarkan cartId (jika ada) atau id biasa
+      const uniqueId = item.cartId || item.id; 
+      const existingItem = acc.find((i) => (i.cartId || i.id) === uniqueId);
+      
       if (existingItem) {
-        existingItem.quantity += 1;
+        existingItem.quantity += item.quantity || 1;
       } else {
-        acc.push({ ...item, quantity: 1 });
+        acc.push({ ...item }); // Gunakan item apa adanya
       }
       return acc;
     }, []);
@@ -31,18 +34,19 @@ const Cart = () => {
     setCartItems(groupedItems);
   }, []);
 
-  const updateLocalStorage = (items) => {
-    localStorage.setItem("cart_processed", JSON.stringify(items));
+  // Helper untuk update state DAN localStorage sekaligus
+  // Supaya saat pindah ke Checkout, datanya sinkron
+  const updateCartData = (newItems) => {
+    setCartItems(newItems);
+    localStorage.setItem("cart", JSON.stringify(newItems));
   };
-
 
   const increaseQty = (id) => {
     const newItems = cartItems.map((item) =>
       item.id === id ? { ...item, quantity: item.quantity + 1 } : item
     );
-    setCartItems(newItems);
+    updateCartData(newItems); // Update Storage juga
   };
-
 
   const decreaseQty = (id) => {
     const newItems = cartItems.map((item) => {
@@ -51,13 +55,12 @@ const Cart = () => {
       }
       return item;
     });
-    setCartItems(newItems);
+    updateCartData(newItems); // Update Storage juga
   };
 
   const removeItem = (id) => {
     const newItems = cartItems.filter((item) => item.id !== id);
-    setCartItems(newItems);
-    localStorage.setItem("cart", JSON.stringify(newItems)); 
+    updateCartData(newItems); // Update Storage juga
   };
 
   const subtotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
@@ -88,10 +91,10 @@ const Cart = () => {
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
               
-              
+              {/* LIST ITEM */}
               <div className="lg:col-span-2 space-y-6">
-                {cartItems.map((item) => (
-                  <div key={item.id} className="flex flex-col sm:flex-row gap-6 bg-[#E0F2FE] p-5 items-center rounded-xl shadow-sm">
+                {cartItems.map((item, index) => (
+                  <div key={index} className="flex flex-col sm:flex-row gap-6 bg-[#E0F2FE] p-5 items-center rounded-xl shadow-sm">
                     <div className="flex items-center gap-5 flex-1 w-full">
                       <img
                         alt={item.name}
@@ -105,12 +108,15 @@ const Cart = () => {
                         <p className="text-[#FB2E86] text-base font-bold leading-normal">
                           {formatRupiah(item.price)}
                         </p>
-                        <p className="text-xs text-gray-500">Kategori: {item.category}</p>
+                        {/* Menampilkan Varian jika ada */}
+                        <p className="text-xs text-gray-500">
+                            {item.selectedColor && `Warna: ${item.selectedColor}`} 
+                            {item.selectedSize && ` | Ukuran: ${item.selectedSize}`}
+                        </p>
                       </div>
                     </div>
                     
                     <div className="flex items-center justify-between w-full sm:w-auto sm:justify-end gap-6">
-            
                       <div className="flex items-center gap-2 text-white">
                         <button 
                             onClick={() => decreaseQty(item.id)}
@@ -143,7 +149,7 @@ const Cart = () => {
                 ))}
               </div>
 
-
+              {/* RINGKASAN PESANAN */}
               <div className="lg:col-span-1">
                 <div className="bg-[#1E3A5F] text-white rounded-xl shadow-lg p-6 sticky top-24">
                   <h2 className="text-2xl font-bold font-['Josefin_Sans'] mb-6">
@@ -164,12 +170,15 @@ const Cart = () => {
                     <span>Total</span>
                     <span>{formatRupiah(totalOrder)}</span>
                   </div>
+                  
+                  {/* 3. TOMBOL CHECKOUT YANG SUDAH DIUPDATE */}
                   <button 
-                    onClick={() => alert("Fitur Checkout belum dibuat ya kak!")}
+                    onClick={() => navigate("/checkout")}
                     className="w-full bg-[#FB2E86] text-white text-lg font-bold py-3 px-6 rounded-lg hover:bg-[#FB2E86]/80 transition-all shadow-md"
                   >
                     Checkout
                   </button>
+                  
                   <div className="text-center mt-4">
                     <Link to="/" className="text-[#7E3FBB] font-bold hover:underline transition-colors bg-white px-4 py-1 rounded-full text-sm">
                       Lanjutkan Belanja

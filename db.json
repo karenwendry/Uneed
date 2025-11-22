@@ -56,7 +56,7 @@
       "id": "y8E7Xjm"
     }
   ],
-"products": [
+  "products": [
     {
       "id": 1,
       "name": "Kertas Binder A5",
@@ -68,8 +68,15 @@
       ],
       "category": "Alat Tulis",
       "description": "Kertas binder ukuran A5 dengan kualitas kertas HVS 70gsm yang tebal dan tidak tembus tinta. Isi 50 lembar, cocok untuk mencatat materi kuliah. Lubang presisi dan rapi.",
-      "colors": ["Putih Garis", "Putih Polos", "Warna-warni"],
-      "sizes": ["A5", "B5"]
+      "colors": [
+        "Putih Garis",
+        "Putih Polos",
+        "Warna-warni"
+      ],
+      "sizes": [
+        "A5",
+        "B5"
+      ]
     },
     {
       "id": 2,
@@ -81,7 +88,11 @@
       ],
       "category": "Aksesoris ",
       "description": "Tali ID Card (Lanyard) bahan tisu lembut di kulit leher. Desain simpel dan elegan, dilengkapi pengait besi yang kuat.",
-      "colors": ["Navy Blue", "Hitam", "Ungu"],
+      "colors": [
+        "Navy Blue",
+        "Hitam",
+        "Ungu"
+      ],
       "sizes": []
     },
     {
@@ -107,7 +118,11 @@
       ],
       "category": "Alat Tulis",
       "description": "Pulpen tinta hitam standard yang lancar digunakan. Ujung runcing 0.5mm membuat tulisan menjadi lebih rapi.",
-      "colors": ["Hitam", "Biru", "Merah"],
+      "colors": [
+        "Hitam",
+        "Biru",
+        "Merah"
+      ],
       "sizes": []
     },
     {
@@ -120,7 +135,10 @@
       ],
       "category": "Aksesoris",
       "description": "Wadah kartu identitas (KTM) berbahan plastik tebal yang tidak mudah pecah. Melindungi kartu dari air dan goresan.",
-      "colors": ["Bening", "Hitam Smoke"],
+      "colors": [
+        "Bening",
+        "Hitam Smoke"
+      ],
       "sizes": []
     },
     {
@@ -134,7 +152,10 @@
       "category": "Alat Tulis",
       "description": "Kertas HVS ukuran A4 75gsm. Cocok untuk print tugas kuliah, skripsi, atau fotocopy. Harga per lembar.",
       "colors": [],
-      "sizes": ["A4", "F4"]
+      "sizes": [
+        "A4",
+        "F4"
+      ]
     },
     {
       "id": 7,
@@ -159,8 +180,39 @@
       ],
       "category": "Elektronik",
       "description": "Kipas angin portable dengan fitur pendingin ekstra. Baterai tahan lama hingga 5 jam, bisa dicharge ulang menggunakan USB Type-C. Penyelamat saat kelas panas!",
-      "colors": ["Putih", "Pink", "Hijau Tosca"],
+      "colors": [
+        "Putih",
+        "Pink",
+        "Hijau Tosca"
+      ],
       "sizes": []
+    }
+  ],
+  "orders": [
+    {
+      "userId": "y8E7Xjm",
+      "userName": "ariel",
+      "date": "2025-11-22T07:10:03.112Z",
+      "status": "Dikemas",
+      "items": [
+        {
+          "id": 1,
+          "name": "Kertas Binder A5",
+          "price": 7000,
+          "image": "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/207970978-.jpg",
+          "images": [
+            "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/207970978-.jpg",
+            "https://down-id.img.susercontent.com/file/id-11134207-7r98o-llkz6z6j4p6f3d"
+          ],
+          "category": "Alat Tulis",
+          "description": "Kertas binder ukuran A5 dengan kualitas kertas HVS 70gsm yang tebal dan tidak tembus tinta. Isi 50 lembar, cocok untuk mencatat materi kuliah. Lubang presisi dan rapi.",
+          "quantity": null
+        }
+      ],
+      "totalPrice": null,
+      "shippingAddress": "hakdg",
+      "paymentMethod": "Transfer Bank",
+      "id": 1
     }
   ]
 }
