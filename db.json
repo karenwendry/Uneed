@@ -68,6 +68,13 @@
       "email": "s2231000@student.unklab.ac.id",
       "password": "kkakka20",
       "role": "user"
+    },
+    {
+      "id": "380c",
+      "name": "injilio",
+      "email": "S22310192@student.unklab.ac.id",
+      "password": "123455",
+      "role": "user"
     }
   ],
   "products": [

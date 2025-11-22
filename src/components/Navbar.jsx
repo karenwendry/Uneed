@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { ShoppingCart } from "lucide-react"; // Import Icon ShoppingCart
+import { ShoppingCart } from "lucide-react"; 
 import logoUneed from "../assets/images/UneedYellow.png";
 
 const Navbar = () => {
@@ -83,37 +83,50 @@ const Navbar = () => {
               />
             </div>
 
-            {/* --- BAGIAN YANG DIUBAH DI SINI --- */}
-            {/* Mengganti button dengan Link ke /cart */}
+            {/* Link Cart */}
             <Link 
               to="/cart" 
               className="p-2 hover:bg-gray-100 rounded-full relative text-gray-600 hover:text-pink-600 transition-colors"
             >
               <ShoppingCart size={24} />
-              {/* Logic badge merah (titik notifikasi) */}
               <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full"></span>
             </Link>
-            {/* ---------------------------------- */}
 
+            {/* --- BAGIAN PROFILE USER (PERUBAHAN DISINI) --- */}
             <div className="group relative">
-              <img
-                src={`https://ui-avatars.com/api/?name=${user.name}&background=random`}
-                alt="User"
-                className="w-9 h-9 rounded-full cursor-pointer border border-gray-300"
-              />
+              
+              {/* 1. Gambar sekarang dibungkus Link agar bisa diklik */}
+              <Link to="/profile">
+                <img
+                  src={`https://ui-avatars.com/api/?name=${user.name}&background=random`}
+                  alt="User"
+                  className="w-9 h-9 rounded-full cursor-pointer border border-gray-300 hover:ring-2 hover:ring-pink-500 transition"
+                />
+              </Link>
+              
               <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden group-hover:block p-2">
-                <p className="px-4 py-2 text-xs text-gray-500 truncate">
+                <p className="px-4 py-2 text-xs text-gray-500 truncate border-b border-gray-100 mb-1">
                   {user.email}
                 </p>
-                <hr className="my-1" />
+                
+                {/* 2. Menu Tambahan di dalam dropdown */}
+                <Link
+                  to="/profile"
+                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded-md transition-colors"
+                >
+                  Profil Saya
+                </Link>
+
                 <button
                   onClick={logout}
-                  className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md"
+                  className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md mt-1"
                 >
                   Logout
                 </button>
               </div>
             </div>
+            {/* --------------------------- */}
+
           </div>
         </div>
       </nav>

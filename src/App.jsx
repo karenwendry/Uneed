@@ -14,7 +14,7 @@ import HomePage from "./pages/Beranda";
 import CataloguePage from "./pages/Katalog";
 import ProductDetailPage from "./pages/ProductDetail";
 import Cart from './pages/Cart';
-import Checkout from './pages/Checkout';
+import ProfilePage from "./pages/Profile/Profile.jsx";
 
 const PrivateRoute = ({ element: Element, ...rest }) => {
   const { user, loading } = useAuth();
@@ -30,6 +30,7 @@ const App = () => {
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          
           <Route path="/home" element={<PrivateRoute element={HomePage} />} />
           <Route
             path="/catalogue"
@@ -39,9 +40,15 @@ const App = () => {
             path="/product/:id"
             element={<PrivateRoute element={ProductDetailPage} />}
           />
-          <Route path="*" element={<Navigate to="/" replace />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
+          
+          {/* <--- 2. Tambahkan Route Profile di sini */}
+          <Route 
+            path="/profile" 
+            element={<PrivateRoute element={ProfilePage} />} 
+          />
+
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>
     </Router>
