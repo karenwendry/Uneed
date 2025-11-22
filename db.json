@@ -40,29 +40,72 @@
       "email": "s22310211@student.unklab.ac.id",
       "password": "890890",
       "role": "user"
+    },
+    {
+      "id": "08c5",
+      "name": "Ivana Sondakh",
+      "email": "s223@student.unklab.ac.id",
+      "password": "123456",
+      "role": "user"
     }
   ],
+
   "products": [
     {
-      "id": "1",
-      "name": "Laptop Acer Aspire",
-      "price": 7500000,
-      "description": "Laptop untuk kebutuhan kuliah dan kerja",
-      "image": "/laptop.png"
+      "id": 1,
+      "name": "Kertas Binder A5",
+      "price": 7000,
+      "image": "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/207970978-.jpg",
+      "category": "Alat Tulis"
     },
     {
-      "id": "2",
-      "name": "Buku Tulis Polos",
-      "price": 15000,
-      "description": "Buku tulis 40 lembar",
-      "image": "/buku.png"
+      "id": 2,
+      "name": "Lanyard",
+      "price": 35000,
+      "image": "https://yippy.id/_next/image?url=https%3A%2F%2Fyippy-prod.s3.ap-southeast-1.amazonaws.com%2Fimages%2F7I634FC5YWY3XtoukvFErzq3FPn3x505W8RCuvEb.png&w=750&q=75",
+      "category": "Aksesoris "
     },
     {
-      "id": "3",
-      "name": "Ransel Kuliah",
-      "price": 120000,
-      "description": "Tas ransel untuk laptop 14 inch",
-      "image": "/ransel.png"
+      "id": 3,
+      "name": "Sticker Anime 2k/pcs",
+      "price": 2000,
+      "image": "https://m.media-amazon.com/images/I/A1hYgbIabGL._AC_SX679_.jpg",
+      "category": "Aksesoris "
+    },
+    {
+      "id": 4,
+      "name": "Pulpen",
+      "price": 1000,
+      "image": "https://smb-padiumkm-images-public-prod.oss-ap-southeast-5.aliyuncs.com/product/image/29012023/631a53ab7255a77e0e6f5346/63d5f3ae78816153e3737727/9afc2b2f705e3072b074dc70418e41.png",
+      "category": "Alat Tulis"
+    },
+    {
+      "id": 5,
+      "name": "ID Card Holder",
+      "price": 4000,
+      "image": "https://img.lazcdn.com/g/p/d24622a76c6ff1d2ea19e1d2db8e9151.jpg_720x720q80.jpg_.webp",
+      "category": "Aksesoris"
+    },
+    {
+      "id": 6,
+      "name": "Kertas HVS A4",
+      "price": 500,
+      "image": "https://image.bosoffice.co.id/s3/productimages/webp/co240310/p1400820/w600-h600/e8c06105-e608-4bf7-b839-a282ab6a517f.png",
+      "category": "Alat Tulis"
+    },
+    {
+      "id": 7,
+      "name": "Pensil & Penghapus Set",
+      "price": 7000,
+      "image": "https://edtans.wordpress.com/wp-content/uploads/2015/06/pencil-and-eraser.jpg",
+      "category": "Alat Tulis"
+    },
+    {
+      "id": 8,
+      "name": "Turbo Kipas Es",
+      "price": 90000,
+      "image": "https://down-id.img.susercontent.com/file/id-11134207-7rbk7-mal5t8ww6k0p6a.webp",
+      "category": "Elektronik"
     }
   ]
 }
