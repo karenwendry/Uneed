@@ -1,5 +1,3 @@
-// src/pages/Auth/Register.jsx
-
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../../components/Navbar'; 
@@ -10,8 +8,15 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  
+  const [showPassword, setShowPassword] = useState(false); 
+  
   const navigate = useNavigate();
   const { register, loading, error } = useAuth(); 
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(prev => !prev);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,35 +67,42 @@ const Register = () => {
             
             {/* Email */}
             <div>
-              <label htmlFor="email" className="text-sm font-medium text-gray-700">Email Universitas</label> {/* Label diubah */}
+              <label htmlFor="email" className="text-sm font-medium text-gray-700">Email Universitas</label>
               <input
                 type="email"
                 id="email"
                 className="w-full border border-gray-300 rounded-lg px-4 py-2.5 mt-1 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition duration-150"
-                placeholder="nama@uneed.ac.id" // Placeholder diubah
+                placeholder="nama@uneed.ac.id"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
 
-            {/* Password */}
+            {/* Password dengan Show/Hide */}
             <div>
               <label htmlFor="password" className="text-sm font-medium text-gray-700">Password</label>
               <div className="relative">
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"} 
                   id="password"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2.5 mt-1 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition duration-150"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2.5 mt-1 focus:border-pink-500 focus:ring-1 focus:ring-pink-500 transition duration-150 pr-16" 
                   placeholder="Minimal 6 karakter"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   minLength={6}
                 />
-                <span className="absolute right-4 top-4 text-sm text-gray-500 cursor-pointer hover:text-pink-500">
-                  Show
-                </span>
+                {/* Tombol Show/Hide */}
+                <button 
+                  type="button" 
+                  onClick={togglePasswordVisibility}
+
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 pr-4 text-sm font-medium text-gray-500 cursor-pointer hover:text-pink-500 focus:outline-none bg-transparent border-none"
+                >
+                  {/* Teks tombol yang berubah secara dinamis */}
+                  {showPassword ? 'Hide' : 'Show'}
+                </button>
               </div>
             </div>
 
@@ -115,4 +127,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Register;
