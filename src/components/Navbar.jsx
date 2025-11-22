@@ -1,65 +1,110 @@
 // src/components/Navbar.jsx
 
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import logoUneed from "../assets/images/UneedYellow.png";
 
 const Navbar = () => {
+  const { user, logout } = useAuth();
   const location = useLocation();
-  const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
-
-  // --- Komponen Gambar Logo ---
-  // Pastikan Anda memiliki file 'logo.png' di folder 'public'
-  const LogoImage = (
-    <img 
-      src="/logo.png" 
-      alt="Uneed Logo" 
-      className="h-8 w-auto" // Tinggi 32px
-    />
+  const isAuthPage =
+    location.pathname === "/login" || location.pathname === "/register";
+  const Logo = (
+    <Link to="/" className="flex items-center">
+      <img
+        src={logoUneed}
+        alt="Uneed Logo"
+        className="h-16 w-auto object-contain"
+      />
+    </Link>
   );
-  // ---------------------------
-
-  // Tampilan Navbar untuk Login/Register (Hanya Logo)
   if (isAuthPage) {
     return (
-      <nav className="w-full bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-5 py-4">
-          <Link to="/" className="flex items-center">
-            {LogoImage} {/* Tampilkan Gambar Logo */}
-          </Link>
+      <nav className="w-full bg-white border-b border-gray-100 py-4 px-6">
+        <div className="max-w-7xl mx-auto flex justify-center md:justify-start">
+          {Logo}
         </div>
       </nav>
     );
   }
+  if (user) {
+    return (
+      <nav className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-5 py-3 flex justify-between items-center">
+          <div className="flex items-center gap-8">
+            {Logo}
 
-  // Tampilan Navbar untuk Landing Page (Lengkap)
-  return (
-    <nav className="w-full bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
-        
-        {/* Logo */}
-        <Link to="/" className="flex items-center">
-          {LogoImage} {/* Tampilkan Gambar Logo */}
-        </Link>
+            <div className="hidden md:flex gap-6 text-sm font-medium text-gray-600">
+              <Link
+                to="/home"
+                className={`${
+                  location.pathname === "/home"
+                    ? "text-black border-b-2 border-black"
+                    : "hover:text-black"
+                } pb-1`}
+              >
+                Beranda
+              </Link>
+              <Link to="/catalogue" className="hover:text-black pb-1">
+                Katalog
+              </Link>
+            </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="hidden md:flex items-center bg-gray-100 rounded-full px-4 py-2 w-64">
+              <span className="text-gray-400 mr-2">🔍</span>
+              <input
+                type="text"
+                placeholder="Search"
+                className="bg-transparent border-none focus:ring-0 text-sm w-full outline-none"
+              />
+            </div>
 
-        {/* Search Bar */}
-        <div className="relative w-1/3 hidden md:block">
-          <input
-            type="text"
-            placeholder="Search"
-            className="w-full py-2 pl-4 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 transition duration-150"
-          />
-          <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-            {/* Menggunakan emoji atau simbol teks sebagai ganti Lucide Icon */}
-            🔍 
+            <button className="p-2 hover:bg-gray-100 rounded-full relative">
+              🛒
+              <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
+            </button>
+
+            <div className="group relative">
+              <img
+                src={`https://ui-avatars.com/api/?name=${user.name}&background=random`}
+                alt="User"
+                className="w-9 h-9 rounded-full cursor-pointer border border-gray-300"
+              />
+              <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden group-hover:block p-2">
+                <p className="px-4 py-2 text-xs text-gray-500 truncate">
+                  {user.email}
+                </p>
+                <hr className="my-1" />
+                <button
+                  onClick={logout}
+                  className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md"
+                >
+                  Logout
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-
-        {/* Tombol Akses */}
-        <div className="flex space-x-3">
-          <Link to="/login" className="px-5 py-2 text-pink-500 border border-pink-500 rounded-lg hover:bg-pink-50 transition duration-150 font-medium">
+      </nav>
+    );
+  }
+  return (
+    <nav className="w-full bg-white shadow-sm py-4 px-6">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {Logo}
+        <div className="flex gap-3">
+          <Link
+            to="/login"
+            className="px-4 py-2 text-pink-600 font-medium hover:bg-pink-50 rounded-lg transition"
+          >
             Masuk
           </Link>
-          <Link to="/register" className="px-5 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition duration-150 font-medium">
+          <Link
+            to="/register"
+            className="px-4 py-2 bg-pink-600 text-white font-medium rounded-lg hover:bg-pink-700 transition"
+          >
             Daftar
           </Link>
         </div>
@@ -68,4 +113,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;
