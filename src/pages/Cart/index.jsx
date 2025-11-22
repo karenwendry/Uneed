@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom"; // 1. Tambah useNavigate
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { Trash2, Minus, Plus, ShoppingBag } from "lucide-react";
 
 const Cart = () => {
-  const navigate = useNavigate(); // 2. Inisialisasi hook navigate
+  const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
 
   const formatRupiah = (price) => {
@@ -17,16 +17,20 @@ const Cart = () => {
 
   useEffect(() => {
     const rawCart = JSON.parse(localStorage.getItem("cart")) || [];
-    // Logika Grouping: Menggabungkan item yang ID + Varian-nya sama
+    
+    // LOGIKA GROUPING DENGAN PENGAMAN (FIX NaN)
     const groupedItems = rawCart.reduce((acc, item) => {
-      // Cek berdasarkan cartId (jika ada) atau id biasa
       const uniqueId = item.cartId || item.id; 
       const existingItem = acc.find((i) => (i.cartId || i.id) === uniqueId);
       
+      // PENGAMAN: Pastikan quantity selalu angka. Kalau error/kosong, anggap 1.
+      const safeQty = parseInt(item.quantity) || 1;
+
       if (existingItem) {
-        existingItem.quantity += item.quantity || 1;
+        existingItem.quantity += safeQty;
       } else {
-        acc.push({ ...item }); // Gunakan item apa adanya
+        // Masukkan item baru dengan quantity yang pasti angka
+        acc.push({ ...item, quantity: safeQty }); 
       }
       return acc;
     }, []);
@@ -34,8 +38,6 @@ const Cart = () => {
     setCartItems(groupedItems);
   }, []);
 
-  // Helper untuk update state DAN localStorage sekaligus
-  // Supaya saat pindah ke Checkout, datanya sinkron
   const updateCartData = (newItems) => {
     setCartItems(newItems);
     localStorage.setItem("cart", JSON.stringify(newItems));
@@ -43,27 +45,34 @@ const Cart = () => {
 
   const increaseQty = (id) => {
     const newItems = cartItems.map((item) =>
-      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      item.id === id ? { ...item, quantity: (parseInt(item.quantity) || 0) + 1 } : item
     );
-    updateCartData(newItems); // Update Storage juga
+    updateCartData(newItems);
   };
 
   const decreaseQty = (id) => {
     const newItems = cartItems.map((item) => {
-      if (item.id === id && item.quantity > 1) {
-        return { ...item, quantity: item.quantity - 1 };
+      const currentQty = parseInt(item.quantity) || 1;
+      if (item.id === id && currentQty > 1) {
+        return { ...item, quantity: currentQty - 1 };
       }
       return item;
     });
-    updateCartData(newItems); // Update Storage juga
+    updateCartData(newItems);
   };
 
   const removeItem = (id) => {
     const newItems = cartItems.filter((item) => item.id !== id);
-    updateCartData(newItems); // Update Storage juga
+    updateCartData(newItems);
   };
 
-  const subtotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+  // PERHITUNGAN TOTAL DENGAN PENGAMAN (FIX NaN)
+  const subtotal = cartItems.reduce((total, item) => {
+    const price = parseInt(item.price) || 0;
+    const qty = parseInt(item.quantity) || 1;
+    return total + (price * qty);
+  }, 0);
+
   const shippingCost = 15000;
   const totalOrder = subtotal + shippingCost;
 
@@ -108,7 +117,6 @@ const Cart = () => {
                         <p className="text-[#FB2E86] text-base font-bold leading-normal">
                           {formatRupiah(item.price)}
                         </p>
-                        {/* Menampilkan Varian jika ada */}
                         <p className="text-xs text-gray-500">
                             {item.selectedColor && `Warna: ${item.selectedColor}`} 
                             {item.selectedSize && ` | Ukuran: ${item.selectedSize}`}
@@ -171,7 +179,6 @@ const Cart = () => {
                     <span>{formatRupiah(totalOrder)}</span>
                   </div>
                   
-                  {/* 3. TOMBOL CHECKOUT YANG SUDAH DIUPDATE */}
                   <button 
                     onClick={() => navigate("/checkout")}
                     className="w-full bg-[#FB2E86] text-white text-lg font-bold py-3 px-6 rounded-lg hover:bg-[#FB2E86]/80 transition-all shadow-md"
