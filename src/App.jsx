@@ -7,7 +7,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { AuthProvider, useAuth } from "./context/AuthContext";
-import LandingPage from "./pages/Landing/Landing";
+import LandingPage from "./pages/Landing/landing";
 import LoginPage from "./pages/Auth/Login";
 import RegisterPage from "./pages/Auth/Register";
 import HomePage from "./pages/Beranda";
