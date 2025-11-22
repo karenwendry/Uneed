@@ -47,177 +47,71 @@
       "email": "s223@student.unklab.ac.id",
       "password": "123456",
       "role": "user"
+    },
+    {
+      "name": "ariel",
+      "email": "ariel@student.unklab.ac.id",
+      "password": "12345678",
+      "role": "user",
+      "id": "y8E7Xjm"
     }
   ],
-
   "products": [
     {
       "id": 1,
       "name": "Kertas Binder A5",
       "price": 7000,
       "image": "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/207970978-.jpg",
-      "category": "Alat Tulis"
+      "images": [
+        "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/207970978-.jpg",
+        "https://down-id.img.susercontent.com/file/id-11134207-7r98o-llkz6z6j4p6f3d"
+      ],
+      "category": "Alat Tulis",
+      "description": "Kertas binder ukuran A5 dengan kualitas kertas HVS 70gsm yang tebal dan tidak tembus tinta. Isi 50 lembar, cocok untuk mencatat materi kuliah. Lubang presisi dan rapi."
     },
     {
       "id": 2,
-      "name": "Lanyard",
+      "name": "Lanyard Unklab",
       "price": 35000,
       "image": "https://yippy.id/_next/image?url=https%3A%2F%2Fyippy-prod.s3.ap-southeast-1.amazonaws.com%2Fimages%2F7I634FC5YWY3XtoukvFErzq3FPn3x505W8RCuvEb.png&w=750&q=75",
-      "category": "Aksesoris "
+      "images": [
+        "https://yippy.id/_next/image?url=https%3A%2F%2Fyippy-prod.s3.ap-southeast-1.amazonaws.com%2Fimages%2F7I634FC5YWY3XtoukvFErzq3FPn3x505W8RCuvEb.png&w=750&q=75"
+      ],
+      "category": "Aksesoris",
+      "description": "Tali ID Card (Lanyard) eksklusif dengan logo Universitas Klabat. Bahan lembut di kulit leher, pengait besi kuat, dan sablon anti luntur. Wajib punya untuk mahasiswa baru!"
     },
     {
       "id": 3,
       "name": "Sticker Anime 2k/pcs",
       "price": 2000,
       "image": "https://m.media-amazon.com/images/I/A1hYgbIabGL._AC_SX679_.jpg",
-      "category": "Aksesoris "
+      "images": [
+        "https://m.media-amazon.com/images/I/A1hYgbIabGL._AC_SX679_.jpg"
+      ],
+      "category": "Aksesoris",
+      "description": "Stiker vinyl anti air (waterproof) dengan berbagai karakter anime populer. Cocok ditempel di laptop, helm, atau binder. Harga per pcs."
     },
     {
       "id": 4,
-      "name": "Pulpen",
+      "name": "Pulpen Standard",
       "price": 1000,
       "image": "https://smb-padiumkm-images-public-prod.oss-ap-southeast-5.aliyuncs.com/product/image/29012023/631a53ab7255a77e0e6f5346/63d5f3ae78816153e3737727/9afc2b2f705e3072b074dc70418e41.png",
-      "category": "Alat Tulis"
-    },
-    {
-      "id": 5,
-      "name": "ID Card Holder",
-      "price": 4000,
-      "image": "https://img.lazcdn.com/g/p/d24622a76c6ff1d2ea19e1d2db8e9151.jpg_720x720q80.jpg_.webp",
-      "category": "Aksesoris"
-    },
-    {
-      "id": 6,
-      "name": "Kertas HVS A4",
-      "price": 500,
-      "image": "https://image.bosoffice.co.id/s3/productimages/webp/co240310/p1400820/w600-h600/e8c06105-e608-4bf7-b839-a282ab6a517f.png",
-      "category": "Alat Tulis"
-    },
-    {
-      "id": 7,
-      "name": "Pensil & Penghapus Set",
-      "price": 7000,
-      "image": "https://edtans.wordpress.com/wp-content/uploads/2015/06/pencil-and-eraser.jpg",
-      "category": "Alat Tulis"
+      "images": [
+         "https://smb-padiumkm-images-public-prod.oss-ap-southeast-5.aliyuncs.com/product/image/29012023/631a53ab7255a77e0e6f5346/63d5f3ae78816153e3737727/9afc2b2f705e3072b074dc70418e41.png"
+      ],
+      "category": "Alat Tulis",
+      "description": "Pulpen tinta hitam yang lancar digunakan. Ujung runcing 0.5mm membuat tulisan menjadi lebih rapi. Pegangan nyaman tidak bikin tangan sakit."
     },
     {
       "id": 8,
       "name": "Turbo Kipas Es",
       "price": 90000,
       "image": "https://down-id.img.susercontent.com/file/id-11134207-7rbk7-mal5t8ww6k0p6a.webp",
-      "category": "Elektronik"
-    },
-    {
-      "id": 9,
-      "name": "T-shirt Front-End Developer",
-      "price": 50000,
-      "image": "https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C61RHDdHgdgL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466_.png",
-      "category": "Pakaian"
-    },
-    {
-      "id": 10,
-      "name": "Almameter Unklab",
-      "price": 200000,
-      "image": "./src/assets/images/almet.png",
-      "category": "Pakaian"
-    },
-    {
-      "id": 11,
-      "name": "Kipas Angin Gantung Leher Portable USB",
-      "price": 142000,
-      "image": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/98/MTA-163328363/brd-44261_kipas-leher-kipas-angin-leher-kipas-angin-gantung-leher-mini-fan-neck-elektrik-kipas-angin-gantung-leher-portable-usb_full01-928f7cea.jpg",
-      "category": "Elektronik"
-    },
-    {
-      "id": 12,
-      "name": "Keyboard Mekanis Nirkabel Logitech, Tombol Bulat ABS Desain Baru Asli",
-      "price": 35000,
-      "image": "https://s.alicdn.com/@sc04/kf/Ha486d4bce3784f0fb5bcc907febc7cf6j.jpg",
-      "category": "Elektronik"
-    },
-    {
-      "id": 13,
-      "name": "Mouse Gaming Rgb, Mouse komputer Multi-media Gaming kabel kualitas tinggi desain baru 2024",
-      "price": 14000,
-      "image": "https://sc04.alicdn.com/kf/He565c837c0f645bd849bd66e0b76b78fo.jpg",
-      "category": "Elektronik"
-    },
-    {
-      "id": 14,
-      "name": "Kacamata Anti Radiasi",
-      "price": 12000,
-      "image": "https://static.jakmall.id/2021/05/images/products/60436c/detail/kacamata-anti-radiasi-style-korea-sunglasses-lensa-bening-bonus-case.jpg",
-      "category": "Aksesoris"
-    },
-    {
-      "id": 15,
-      "name": "Binder",
-      "price": 20000,
-      "image": "https://siplah.blibli.com/data/images/STDP-0019-00105/a63cf44d-c67d-4a2d-84a4-fafeb75fc598.jpeg",
-      "category": "Alat Tulis"
-    },
-    {
-      "id": 16,
-      "name": "Celana Kargo Wanita",
-      "price": 7800,
-      "image": "https://id-test-11.slatic.net/p/021d977f7a591f43b5c1a28545910304.png",
-      "category": "Pakaian"
-    },
-    {
-      "id": 17,
-      "name": "Hoodie Polos Pria/Wanita",
-      "price": 50000,
-      "image": "https://img.lazcdn.com/g/p/0c9ce67288ec5573f9db09d0c48f9412.jpg_720x720q80.jpg",
-      "category": "Pakaian"
-    },
-    {
-      "id": 18,
-      "name": "Jam Tangan",
-      "price": 97000,
-      "image": "https://images-cdn.ubuy.co.id/636452097eff3602300b1783-english-talking-watch-english-voice.jpg",
-      "category": "Aksesoris"
-    },
-    {
-      "id": 19,
-      "name": "Tas Ransel Laptop Anti Maling",
-      "price": 150000,
-      "image": "./src/assets/images/taslaptop.png",
-      "category": "Tas"
-    },
-    {
-      "id": 20,
-      "name": "Topi",
-      "price": 17000,
-      "image": "https://blog-asset.jakartanotebook.com/2023/11/Add-a-subheading.png",
-      "category": "Aksesoris"
-    },
-    {
-      "id": 21,
-      "name": "Tip Ex",
-      "price": 6000,
-      "image": "https://cdn.ralali.id/assets/img/Libraries/TIPEX-TIPE-X-TIP-EX-KERTAS-CORRECTION-TAPE-MODEL-KERTAS-JOYKO-CT508-ISI-8MTR_XguA99k8gHXnH0zO_1662567261.png",
-      "category": "Alat Tulis"
-    },
-    {
-      "id": 22,
-      "name": "Botol Minuman",
-      "price": 45000,
-      "image": "https://id-live-01.slatic.net/p/7cee13fd71ad17f386623190f35737ea.jpg",
-      "category": "Botol Minuman"
-    },
-    {
-      "id": 23,
-      "name": "Tas laptop",
-      "price": 80000,
-      "image": "https://ae01.alicdn.com/kf/Sf8037d88ccee4e75b6bb043f7cfc57e7T.jpg",
-      "category": "Tas"
-    },
-    {
-      "id": 24,
-      "name": "Flashdisk 32GB USB 2.0 JETE U2 Slide Push Retracable",
-      "price": 45000,
-      "image": "https://doran.id/wp-content/uploads/2025/11/Flashdisk-JETE-U2-7-600x600.jpg",
-      "category": "Elektronik"
+      "images": [
+         "https://down-id.img.susercontent.com/file/id-11134207-7rbk7-mal5t8ww6k0p6a.webp"
+      ],
+      "category": "Elektronik",
+      "description": "Kipas angin portable dengan fitur pendingin ekstra. Baterai tahan lama hingga 5 jam, bisa dicharge ulang menggunakan USB Type-C. Penyelamat saat kelas panas!"
     }
   ]
 }
