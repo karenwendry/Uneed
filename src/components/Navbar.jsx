@@ -1,15 +1,23 @@
 // src/components/Navbar.jsx
-
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react"; // Tambah useState
+import { Link, useLocation, useNavigate } from "react-router-dom"; // Tambah useNavigate
 import { useAuth } from "../context/AuthContext";
 import logoUneed from "../assets/images/UneedYellow.png";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
   const location = useLocation();
+  const navigate = useNavigate();
+  const [keyword, setKeyword] = useState("");
+
   const isAuthPage =
     location.pathname === "/login" || location.pathname === "/register";
+  const handleSearch = (e) => {
+    if (e.key === "Enter") {
+      navigate(`/catalogue?search=${keyword}`);
+    }
+  };
+
   const Logo = (
     <Link to="/" className="flex items-center">
       <img
@@ -19,6 +27,7 @@ const Navbar = () => {
       />
     </Link>
   );
+
   if (isAuthPage) {
     return (
       <nav className="w-full bg-white border-b border-gray-100 py-4 px-6">
@@ -28,6 +37,7 @@ const Navbar = () => {
       </nav>
     );
   }
+
   if (user) {
     return (
       <nav className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -46,7 +56,14 @@ const Navbar = () => {
               >
                 Beranda
               </Link>
-              <Link to="/catalogue" className="hover:text-black pb-1">
+              <Link
+                to="/catalogue"
+                className={`${
+                  location.pathname === "/catalogue"
+                    ? "text-black border-b-2 border-black"
+                    : "hover:text-black"
+                } pb-1`}
+              >
                 Katalog
               </Link>
             </div>
@@ -56,8 +73,11 @@ const Navbar = () => {
               <span className="text-gray-400 mr-2">🔍</span>
               <input
                 type="text"
-                placeholder="Search"
+                placeholder="Cari barang..."
                 className="bg-transparent border-none focus:ring-0 text-sm w-full outline-none"
+                value={keyword}
+                onChange={(e) => setKeyword(e.target.value)}
+                onKeyDown={handleSearch}
               />
             </div>
 
