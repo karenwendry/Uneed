@@ -106,6 +106,118 @@
       "price": 90000,
       "image": "https://down-id.img.susercontent.com/file/id-11134207-7rbk7-mal5t8ww6k0p6a.webp",
       "category": "Elektronik"
+    },
+    {
+      "id": 9,
+      "name": "T-shirt Front-End Developer",
+      "price": 50000,
+      "image": "https://m.media-amazon.com/images/I/B1pppR4gVKL._CLa%7C2140%2C2000%7C61RHDdHgdgL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_SX466_.png",
+      "category": "Pakaian"
+    },
+    {
+      "id": 10,
+      "name": "Almameter Unklab",
+      "price": 200000,
+      "image": "./src/assets/images/almet.png",
+      "category": "Pakaian"
+    },
+    {
+      "id": 11,
+      "name": "Kipas Angin Gantung Leher Portable USB",
+      "price": 142000,
+      "image": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/catalog-image/98/MTA-163328363/brd-44261_kipas-leher-kipas-angin-leher-kipas-angin-gantung-leher-mini-fan-neck-elektrik-kipas-angin-gantung-leher-portable-usb_full01-928f7cea.jpg",
+      "category": "Elektronik"
+    },
+    {
+      "id": 12,
+      "name": "Keyboard Mekanis Nirkabel Logitech, Tombol Bulat ABS Desain Baru Asli",
+      "price": 35000,
+      "image": "https://s.alicdn.com/@sc04/kf/Ha486d4bce3784f0fb5bcc907febc7cf6j.jpg",
+      "category": "Elektronik"
+    },
+    {
+      "id": 13,
+      "name": "Mouse Gaming Rgb, Mouse komputer Multi-media Gaming kabel kualitas tinggi desain baru 2024",
+      "price": 14000,
+      "image": "https://sc04.alicdn.com/kf/He565c837c0f645bd849bd66e0b76b78fo.jpg",
+      "category": "Elektronik"
+    },
+    {
+      "id": 14,
+      "name": "Kacamata Anti Radiasi",
+      "price": 12000,
+      "image": "https://static.jakmall.id/2021/05/images/products/60436c/detail/kacamata-anti-radiasi-style-korea-sunglasses-lensa-bening-bonus-case.jpg",
+      "category": "Aksesoris"
+    },
+    {
+      "id": 15,
+      "name": "Binder",
+      "price": 20000,
+      "image": "https://siplah.blibli.com/data/images/STDP-0019-00105/a63cf44d-c67d-4a2d-84a4-fafeb75fc598.jpeg",
+      "category": "Alat Tulis"
+    },
+    {
+      "id": 16,
+      "name": "Celana Kargo Wanita",
+      "price": 7800,
+      "image": "https://id-test-11.slatic.net/p/021d977f7a591f43b5c1a28545910304.png",
+      "category": "Pakaian"
+    },
+    {
+      "id": 17,
+      "name": "Hoodie Polos Pria/Wanita",
+      "price": 50000,
+      "image": "https://img.lazcdn.com/g/p/0c9ce67288ec5573f9db09d0c48f9412.jpg_720x720q80.jpg",
+      "category": "Pakaian"
+    },
+    {
+      "id": 18,
+      "name": "Jam Tangan",
+      "price": 97000,
+      "image": "https://images-cdn.ubuy.co.id/636452097eff3602300b1783-english-talking-watch-english-voice.jpg",
+      "category": "Aksesoris"
+    },
+    {
+      "id": 19,
+      "name": "Tas Ransel Laptop Anti Maling",
+      "price": 150000,
+      "image": "./src/assets/images/taslaptop.png",
+      "category": "Tas"
+    },
+    {
+      "id": 20,
+      "name": "Topi",
+      "price": 17000,
+      "image": "https://blog-asset.jakartanotebook.com/2023/11/Add-a-subheading.png",
+      "category": "Aksesoris"
+    },
+    {
+      "id": 21,
+      "name": "Tip Ex",
+      "price": 6000,
+      "image": "https://cdn.ralali.id/assets/img/Libraries/TIPEX-TIPE-X-TIP-EX-KERTAS-CORRECTION-TAPE-MODEL-KERTAS-JOYKO-CT508-ISI-8MTR_XguA99k8gHXnH0zO_1662567261.png",
+      "category": "Alat Tulis"
+    },
+    {
+      "id": 22,
+      "name": "Botol Minuman",
+      "price": 45000,
+      "image": "https://id-live-01.slatic.net/p/7cee13fd71ad17f386623190f35737ea.jpg",
+      "category": "Botol Minuman"
+    },
+    {
+      "id": 23,
+      "name": "Tas laptop",
+      "price": 80000,
+      "image": "https://ae01.alicdn.com/kf/Sf8037d88ccee4e75b6bb043f7cfc57e7T.jpg",
+      "category": "Tas"
+    },
+    {
+      "id": 24,
+      "name": "Flashdisk 32GB USB 2.0 JETE U2 Slide Push Retracable",
+      "price": 45000,
+      "image": "https://doran.id/wp-content/uploads/2025/11/Flashdisk-JETE-U2-7-600x600.jpg",
+      "category": "Elektronik"
     }
   ]
 }
