@@ -14,6 +14,7 @@ import HomePage from "./pages/Beranda";
 import CataloguePage from "./pages/Katalog";
 import ProductDetailPage from "./pages/ProductDetail";
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 
 const PrivateRoute = ({ element: Element, ...rest }) => {
   const { user, loading } = useAuth();
@@ -40,6 +41,7 @@ const App = () => {
           />
           <Route path="*" element={<Navigate to="/" replace />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </AuthProvider>
     </Router>
