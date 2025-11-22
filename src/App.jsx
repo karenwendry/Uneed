@@ -13,6 +13,7 @@ import RegisterPage from "./pages/Auth/Register";
 import HomePage from "./pages/Beranda";
 import CataloguePage from "./pages/Katalog";
 import ProductDetailPage from "./pages/ProductDetail";
+import Cart from './pages/Cart';
 
 const PrivateRoute = ({ element: Element, ...rest }) => {
   const { user, loading } = useAuth();
@@ -38,6 +39,7 @@ const App = () => {
             element={<PrivateRoute element={ProductDetailPage} />}
           />
           <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </AuthProvider>
     </Router>

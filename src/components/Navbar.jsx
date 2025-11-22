@@ -1,7 +1,8 @@
 // src/components/Navbar.jsx
-import React, { useState } from "react"; // Tambah useState
-import { Link, useLocation, useNavigate } from "react-router-dom"; // Tambah useNavigate
+import React, { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { ShoppingCart } from "lucide-react"; // Import Icon ShoppingCart
 import logoUneed from "../assets/images/UneedYellow.png";
 
 const Navbar = () => {
@@ -12,6 +13,7 @@ const Navbar = () => {
 
   const isAuthPage =
     location.pathname === "/login" || location.pathname === "/register";
+    
   const handleSearch = (e) => {
     if (e.key === "Enter") {
       navigate(`/catalogue?search=${keyword}`);
@@ -81,10 +83,17 @@ const Navbar = () => {
               />
             </div>
 
-            <button className="p-2 hover:bg-gray-100 rounded-full relative">
-              🛒
-              <span className="absolute top-0 right-0 h-2 w-2 bg-red-500 rounded-full"></span>
-            </button>
+            {/* --- BAGIAN YANG DIUBAH DI SINI --- */}
+            {/* Mengganti button dengan Link ke /cart */}
+            <Link 
+              to="/cart" 
+              className="p-2 hover:bg-gray-100 rounded-full relative text-gray-600 hover:text-pink-600 transition-colors"
+            >
+              <ShoppingCart size={24} />
+              {/* Logic badge merah (titik notifikasi) */}
+              <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full"></span>
+            </Link>
+            {/* ---------------------------------- */}
 
             <div className="group relative">
               <img
@@ -127,6 +136,7 @@ const Navbar = () => {
           >
             Daftar
           </Link>
+          
         </div>
       </div>
     </nav>
