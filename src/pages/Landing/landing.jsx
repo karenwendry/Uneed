@@ -1,18 +1,44 @@
 // src/pages/Landing/Landing.jsx
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 const Landing = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/products");
+        const data = await response.json();
+        setProducts(data.slice(0, 8)); 
+        setLoading(false);
+      } catch (error) {
+        console.error("Gagal mengambil produk:", error);
+        setLoading(false); 
+      }
+    };
+    fetchProducts();
+  }, []);
+
+  const formatRupiah = (price) => {
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      maximumFractionDigits: 0,
+    }).format(price);
+  };
+  
   return (
-    <div className="w-full min-h-screen flex flex-col">
+    <div className="min-h-screen bg-white font-sans">
       <Navbar /> 
       
-      <div className="flex-grow max-w-7xl mx-auto px-5 pb-20"> 
+      <main className="max-w-7xl mx-auto px-5 py-6"> 
         
-        {/* Banner (Hero Section) */}
+        {/* Banner (Hero Section)*/}
         <div className="relative w-full rounded-xl overflow-hidden shadow-lg mb-10">
           <div className="bg-gradient-to-r from-[#151875] to-[#2E0A6B] h-[280px] md:h-[320px] w-full flex items-center px-8 md:px-16">
             <div className="max-w-2xl text-white z-10">
@@ -33,85 +59,52 @@ const Landing = () => {
           </div>
         </div>
 
-        {/* Produk Terlaris */}
-        <div className="mt-16">
-          <h2 className="font-bold text-2xl">Produk Terlaris</h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mt-6">
-            
-            {/* Item 1 */}
-            <div className="border border-gray-200 rounded-xl p-3 shadow-md hover:shadow-lg transition duration-300 cursor-pointer">
-              <img src="https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/207970978-.jpg" alt="kertas" className="rounded-md h-32 w-full object-cover" />
-              <p className="mt-3 font-semibold text-sm">Kertas Binder A5</p>
-              <p className="text-pink-600 font-bold text-md">Rp 7.000</p>
-            </div>
-            
-            {/* Item 2 */}
-            <div className="border border-gray-200 rounded-xl p-3 shadow-md hover:shadow-lg transition duration-300 cursor-pointer">
-              <img src="https://yippy.id/_next/image?url=https%3A%2F%2Fyippy-prod.s3.ap-southeast-1.amazonaws.com%2Fimages%2F7I634FC5YWY3XtoukvFErzq3FPn3x505W8RCuvEb.png&w=750&q=75" alt="lanyard" className="rounded-md h-32 w-full object-cover" />
-              <p className="mt-3 font-semibold text-sm">Lanyard</p>
-              <p className="text-pink-600 font-bold text-md">Rp 35.000</p>
-            </div>
-            
-            {/* Item 3 */}
-            <div className="border border-gray-200 rounded-xl p-3 shadow-md hover:shadow-lg transition duration-300 cursor-pointer">
-              <img src="https://m.media-amazon.com/images/I/A1hYgbIabGL._AC_SX679_.jpg" alt="Sticker" className="rounded-md h-32 w-full object-cover" />
-              <p className="mt-3 font-semibold text-sm">Sticker Anime 2k/pcs</p>
-              <p className="text-pink-600 font-bold text-md">Rp 2.000</p>
-            </div>
-            
-            {/* Item 4 */}
-            <div className="border border-gray-200 rounded-xl p-3 shadow-md hover:shadow-lg transition duration-300 cursor-pointer">
-              <img src="https://smb-padiumkm-images-public-prod.oss-ap-southeast-5.aliyuncs.com/product/image/29012023/631a53ab7255a77e0e6f5346/63d5f3ae78816153e3737727/9afc2b2f705e3072b074dc70418e41.png" alt="Pulpen" className="rounded-md h-32 w-full object-cover" />
-              <p className="mt-3 font-semibold text-sm">Pulpen</p>
-              <p className="text-pink-600 font-bold text-md">Rp 1.000</p>
-            </div>
-
-            {/* Item 5 */}
-            <div className="border border-gray-200 rounded-xl p-3 shadow-md hover:shadow-lg transition duration-300 cursor-pointer">
-              <img src="https://img.lazcdn.com/g/p/d24622a76c6ff1d2ea19e1d2db8e9151.jpg_720x720q80.jpg_.webp" alt="ID card" className="rounded-md h-32 w-full object-cover" />
-              <p className="mt-3 font-semibold text-sm">ID Card Holder</p>
-              <p className="text-pink-600 font-bold text-md">Rp 4.000</p>
-            </div>
-
-            {/* Item 6 */}
-            <div className="border border-gray-200 rounded-xl p-3 shadow-md hover:shadow-lg transition duration-300 cursor-pointer">
-              <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk7-mal5t8ww6k0p6a.webp" alt="Turbo kipas" className="rounded-md h-32 w-full object-cover" />
-              <p className="mt-3 font-semibold text-sm">Turbo Kipas Es</p>
-              <p className="text-pink-600 font-bold text-md">Rp 90.000</p>
-            </div>
-
+        {/* Produk Terlaris*/}
+        <div className="mb-20">
+          <div className="flex justify-between items-center mb-6 border-b border-gray-200 pb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Produk Terlaris
+            </h2>
+            <Link
+              to="/catalogue"
+              className="text-sm font-semibold text-gray-500 hover:text-pink-600 flex items-center gap-1"
+            >
+              Lihat semua <span className="text-lg">→</span>
+            </Link>
           </div>
+          {loading ? (
+            <p className="text-center text-gray-500 py-10">Memuat produk...</p>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {/* Mapping data produk*/}
+              {products.map((item) => (
+                <Link
+                  to={`/product/${item.id}`}
+                  key={item.id}
+                  className="group cursor-pointer block"
+                >
+                  <div className="bg-gray-100 rounded-xl overflow-hidden aspect-square relative mb-3">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300"
+                    />
+                  </div>
+                  <h3 className="font-semibold text-gray-800 text-base leading-tight mb-1 truncate">
+                    {item.name}
+                  </h3>
+                  <p className="text-gray-500 text-xs mb-1">
+                    {item.category || "Umum"}
+                  </p>
+                  <p className="text-lg font-bold text-gray-900">
+                    {formatRupiah(item.price)}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
-
-        {/* Kategori */}
-        <div className="mt-16">
-          <h2 className="font-bold text-2xl">Kategori</h2>
-
-          <div className="flex gap-8 justify-between mt-6 flex-wrap">
-            <div className="text-center">
-              <img src="/cat1.png" alt="Kategori 1" className="w-20 h-20 object-cover rounded-full shadow-lg hover:scale-105 transition duration-300 cursor-pointer" />
-              <p className="text-sm mt-2">Elektronik</p>
-            </div>
-            <div className="text-center">
-              <img src="/cat2.png" alt="Kategori 2" className="w-20 h-20 object-cover rounded-full shadow-lg hover:scale-105 transition duration-300 cursor-pointer" />
-              <p className="text-sm mt-2">Buku</p>
-            </div>
-            <div className="text-center">
-              <img src="/cat3.png" alt="Kategori 3" className="w-20 h-20 object-cover rounded-full shadow-lg hover:scale-105 transition duration-300 cursor-pointer" />
-              <p className="text-sm mt-2">Peralatan</p>
-            </div>
-            <div className="text-center">
-              <img src="/cat4.png" alt="Kategori 4" className="w-20 h-20 object-cover rounded-full shadow-lg hover:scale-105 transition duration-300 cursor-pointer" />
-              <p className="text-sm mt-2">Furniture</p>
-            </div>
-            <div className="text-center">
-              <img src="/cat5.png" alt="Kategori 5" className="w-20 h-20 object-cover rounded-full shadow-lg hover:scale-105 transition duration-300 cursor-pointer" />
-              <p className="text-sm mt-2">Alat Tulis</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      </main>
       <Footer /> 
     </div>
   );
