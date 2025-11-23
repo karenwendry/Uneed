@@ -12,7 +12,6 @@ import LandingPage from "./pages/Landing/landing";
 import HomePage from "./pages/Beranda";
 import CataloguePage from "./pages/Katalog";
 import ProductDetailPage from "./pages/ProductDetail";
-import Cart from './pages/Cart';
 import ProfilePage from "./pages/Profile/Profile.jsx";
 
 const PrivateRoute = ({ element: Element, ...rest }) => {
@@ -41,7 +40,7 @@ const App = () => {
             path="/product/:id"
             element={<PrivateRoute element={ProductDetailPage} />}
           />
-          <Route path="/cart" element={<Cart />} />
+
           
           <Route 
             path="/profile" 
