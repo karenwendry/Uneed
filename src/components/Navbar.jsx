@@ -83,15 +83,6 @@ const Navbar = () => {
               />
             </div>
 
-            {/* Link Cart */}
-            <Link 
-              to="/cart" 
-              className="p-2 hover:bg-gray-100 rounded-full relative text-gray-600 hover:text-pink-600 transition-colors"
-            >
-              <ShoppingCart size={24} />
-              <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full"></span>
-            </Link>
-
             {/* --- BAGIAN PROFILE USER (PERUBAHAN DISINI) --- */}
             <div className="group relative">
               
