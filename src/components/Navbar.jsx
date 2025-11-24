@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { ShoppingCart } from "lucide-react"; 
 import logoUneed from "../assets/images/UneedYellow.png";
 
 const Navbar = () => {
@@ -13,7 +12,7 @@ const Navbar = () => {
 
   const isAuthPage =
     location.pathname === "/login" || location.pathname === "/register";
-    
+
   const handleSearch = (e) => {
     if (e.key === "Enter") {
       navigate(`/catalogue?search=${keyword}`);
@@ -83,10 +82,7 @@ const Navbar = () => {
               />
             </div>
 
-            {/* --- BAGIAN PROFILE USER (PERUBAHAN DISINI) --- */}
             <div className="group relative">
-              
-              {/* 1. Gambar sekarang dibungkus Link agar bisa diklik */}
               <Link to="/profile">
                 <img
                   src={`https://ui-avatars.com/api/?name=${user.name}&background=random`}
@@ -94,30 +90,29 @@ const Navbar = () => {
                   className="w-9 h-9 rounded-full cursor-pointer border border-gray-300 hover:ring-2 hover:ring-pink-500 transition"
                 />
               </Link>
-              
-              <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg hidden group-hover:block p-2">
-                <p className="px-4 py-2 text-xs text-gray-500 truncate border-b border-gray-100 mb-1">
-                  {user.email}
-                </p>
-                
-                {/* 2. Menu Tambahan di dalam dropdown */}
-                <Link
-                  to="/profile"
-                  className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded-md transition-colors"
-                >
-                  Profil Saya
-                </Link>
 
-                <button
-                  onClick={logout}
-                  className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md mt-1"
-                >
-                  Logout
-                </button>
+              <div className="absolute right-0 top-full pt-2 w-48 hidden group-hover:block">
+                <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-2">
+                  <p className="px-4 py-2 text-xs text-gray-500 truncate border-b border-gray-100 mb-1">
+                    {user.email}
+                  </p>
+
+                  <Link
+                    to="/profile"
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-pink-50 hover:text-pink-600 rounded-md transition-colors"
+                  >
+                    Profil Saya
+                  </Link>
+
+                  <button
+                    onClick={logout}
+                    className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 rounded-md mt-1"
+                  >
+                    Logout
+                  </button>
+                </div>
               </div>
             </div>
-            {/* --------------------------- */}
-
           </div>
         </div>
       </nav>
@@ -140,7 +135,6 @@ const Navbar = () => {
           >
             Daftar
           </Link>
-          
         </div>
       </div>
     </nav>

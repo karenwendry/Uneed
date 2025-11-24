@@ -82,6 +82,13 @@
       "email": "s101010@student.unklab.ac.id",
       "password": "101010",
       "role": "user"
+    },
+    {
+      "id": "609e",
+      "name": "ivana",
+      "email": "ivana@student.unklab.ac.id",
+      "password": "123456",
+      "role": "user"
     }
   ],
   "products": [
