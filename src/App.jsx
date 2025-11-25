@@ -7,13 +7,11 @@ import {
   Navigate,
 } from "react-router-dom";
 import { AuthProvider, useAuth } from "./context/AuthContext";
+import LoginAnimation from "./pages/Auth/LoginAnimation"; 
 import LandingPage from "./pages/Landing/landing";
-import LoginPage from "./pages/Auth/Login";
-import RegisterPage from "./pages/Auth/Register";
 import HomePage from "./pages/Beranda";
 import CataloguePage from "./pages/Katalog";
 import ProductDetailPage from "./pages/ProductDetail";
-import Cart from './pages/Cart';
 import ProfilePage from "./pages/Profile/Profile.jsx";
 
 const PrivateRoute = ({ element: Element, ...rest }) => {
@@ -28,9 +26,11 @@ const App = () => {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginAnimation />} />
+          <Route path="/register" element={<LoginAnimation />} />
           
+          {/* ------------------------------- */}
+
           <Route path="/home" element={<PrivateRoute element={HomePage} />} />
           <Route
             path="/catalogue"
@@ -40,9 +40,8 @@ const App = () => {
             path="/product/:id"
             element={<PrivateRoute element={ProductDetailPage} />}
           />
-          <Route path="/cart" element={<Cart />} />
+
           
-          {/* <--- 2. Tambahkan Route Profile di sini */}
           <Route 
             path="/profile" 
             element={<PrivateRoute element={ProfilePage} />} 
