@@ -1,0 +1,194 @@
+{
+  "users": [
+    {
+      "id": "9e10",
+      "name": "Karen Wendry",
+      "email": "s22310244@student.unklab.ac.id",
+      "password": "kkakka20"
+    },
+    {
+      "id": "c332",
+      "name": "aku cantik",
+      "email": "s123@student.unklab.ac.id",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "b28b",
+      "name": "karwen",
+      "email": "s22310888@student.unklab.ac.id",
+      "password": "123123",
+      "role": "user"
+    },
+    {
+      "id": "95bf",
+      "name": "m",
+      "email": "s22310299@student.unklab.ac.id",
+      "password": "kkakka20",
+      "role": "user"
+    },
+    {
+      "id": "5f63",
+      "name": "taehyung",
+      "email": "s22310240@student.unklab.ac.id",
+      "password": "kkakka20",
+      "role": "user"
+    },
+    {
+      "id": "f797",
+      "name": "karenniga",
+      "email": "s22310211@student.unklab.ac.id",
+      "password": "1232123",
+      "role": "user"
+    },
+    {
+      "id": "08c5",
+      "name": "Ivana Sondakh",
+      "email": "s223@student.unklab.ac.id",
+      "password": "123456",
+      "role": "user"
+    },
+    {
+      "name": "ariel",
+      "email": "ariel@student.unklab.ac.id",
+      "password": "87654321",
+      "role": "user",
+      "id": "y8E7Xjm"
+    },
+    {
+      "id": "a9c6",
+      "name": "taehyunk",
+      "email": "s123456@student.unklab.ac.id",
+      "password": "789789",
+      "role": "user"
+    },
+    {
+      "id": "8bed",
+      "name": "kjjkjk",
+      "email": "s2231000@student.unklab.ac.id",
+      "password": "kkakka20",
+      "role": "user"
+    },
+    {
+      "id": "9912",
+      "name": "kekeyi",
+      "email": "s101010@student.unklab.ac.id",
+      "password": "101010",
+      "role": "user"
+    },
+    {
+      "id": "609e",
+      "name": "ivana",
+      "email": "ivana@student.unklab.ac.id",
+      "password": "123456",
+      "role": "user"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Kertas Binder A5",
+      "price": 7000,
+      "image": "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/207970978-.jpg",
+      "images": [
+        "https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/items/207970978-.jpg",
+        "https://down-id.img.susercontent.com/file/id-11134207-7r98o-llkz6z6j4p6f3d"
+      ],
+      "category": "Alat Tulis",
+      "description": "Kertas binder ukuran A5 dengan kualitas kertas HVS 70gsm yang tebal dan tidak tembus tinta. Isi 50 lembar, cocok untuk mencatat materi kuliah. Lubang presisi dan rapi.",
+      "wa": "6281234567890",
+      "ig": "kertas_murah_unklab"
+    },
+    {
+      "id": "2",
+      "name": "Lanyard Unklab",
+      "price": 35000,
+      "image": "https://yippy.id/_next/image?url=https%3A%2F%2Fyippy-prod.s3.ap-southeast-1.amazonaws.com%2Fimages%2F7I634FC5YWY3XtoukvFErzq3FPn3x505W8RCuvEb.png&w=750&q=75",
+      "images": [
+        "https://yippy.id/_next/image?url=https%3A%2F%2Fyippy-prod.s3.ap-southeast-1.amazonaws.com%2Fimages%2F7I634FC5YWY3XtoukvFErzq3FPn3x505W8RCuvEb.png&w=750&q=75"
+      ],
+      "category": "Aksesoris",
+      "description": "Tali ID Card (Lanyard) eksklusif dengan logo Universitas Klabat. Bahan lembut di kulit leher, pengait besi kuat, dan sablon anti luntur. Wajib punya untuk mahasiswa baru!",
+      "wa": "6289876543210",
+      "ig": "merchandise_unklab"
+    },
+    {
+      "id": "3",
+      "name": "Sticker Anime 2k/pcs",
+      "price": 2000,
+      "image": "https://m.media-amazon.com/images/I/A1hYgbIabGL._AC_SX679_.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/I/A1hYgbIabGL._AC_SX679_.jpg"
+      ],
+      "category": "Aksesoris",
+      "description": "Stiker vinyl anti air (waterproof) dengan berbagai karakter anime populer. Cocok ditempel di laptop, helm, atau binder. Harga per pcs.",
+      "wa": "628111222333",
+      "ig": "wibu_store_manado"
+    },
+    {
+      "id": "4",
+      "name": "Pulpen Standard",
+      "price": 1000,
+      "image": "https://smb-padiumkm-images-public-prod.oss-ap-southeast-5.aliyuncs.com/product/image/29012023/631a53ab7255a77e0e6f5346/63d5f3ae78816153e3737727/9afc2b2f705e3072b074dc70418e41.png",
+      "images": [
+        "https://smb-padiumkm-images-public-prod.oss-ap-southeast-5.aliyuncs.com/product/image/29012023/631a53ab7255a77e0e6f5346/63d5f3ae78816153e3737727/9afc2b2f705e3072b074dc70418e41.png"
+      ],
+      "category": "Alat Tulis",
+      "description": "Pulpen tinta hitam yang lancar digunakan. Ujung runcing 0.5mm membuat tulisan menjadi lebih rapi. Pegangan nyaman tidak bikin tangan sakit.",
+      "wa": "628555666777",
+      "ig": "atk_lengkap_airmadidi"
+    },
+    {
+      "id": "5",
+      "name": "ID Card Holder",
+      "price": 4000,
+      "image": "https://img.lazcdn.com/g/p/d24622a76c6ff1d2ea19e1d2db8e9151.jpg_720x720q80.jpg_.webp",
+      "images": [
+        "https://img.lazcdn.com/g/p/d24622a76c6ff1d2ea19e1d2db8e9151.jpg_720x720q80.jpg_.webp"
+      ],
+      "category": "Aksesoris",
+      "description": "Wadah kartu identitas (KTM) berbahan plastik tebal yang tidak mudah pecah. Melindungi kartu dari air dan goresan. Tersedia warna bening dan smoke.",
+      "wa": "628222333444",
+      "ig": "idcard_stuff"
+    },
+    {
+      "id": "6",
+      "name": "Kertas HVS A4",
+      "price": 500,
+      "image": "https://image.bosoffice.co.id/s3/productimages/webp/co240310/p1400820/w600-h600/e8c06105-e608-4bf7-b839-a282ab6a517f.png",
+      "images": [
+        "https://image.bosoffice.co.id/s3/productimages/webp/co240310/p1400820/w600-h600/e8c06105-e608-4bf7-b839-a282ab6a517f.png"
+      ],
+      "category": "Alat Tulis",
+      "description": "Kertas HVS ukuran A4 75gsm. Cocok untuk print tugas kuliah, skripsi, atau fotocopy. Dijual eceran per lembar, sangat membantu saat kepepet.",
+      "wa": "628777888999",
+      "ig": "fotocopy_asrama"
+    },
+    {
+      "id": "7",
+      "name": "Pensil & Penghapus Set",
+      "price": 7000,
+      "image": "https://edtans.wordpress.com/wp-content/uploads/2015/06/pencil-and-eraser.jpg",
+      "images": [
+        "https://edtans.wordpress.com/wp-content/uploads/2015/06/pencil-and-eraser.jpg"
+      ],
+      "category": "Alat Tulis",
+      "description": "Paket hemat ujian berisi 2 pensil 2B dan 1 penghapus karet berkualitas tinggi. Menghapus bersih tanpa merusak kertas.",
+      "wa": "628123000999",
+      "ig": "stationery_student"
+    },
+    {
+      "id": "8",
+      "name": "Turbo Kipas Es",
+      "price": 90000,
+      "image": "https://down-id.img.susercontent.com/file/id-11134207-7rbk7-mal5t8ww6k0p6a.webp",
+      "images": [
+        "https://down-id.img.susercontent.com/file/id-11134207-7rbk7-mal5t8ww6k0p6a.webp"
+      ],
+      "category": "Elektronik",
+      "description": "Kipas angin portable dengan fitur pendingin ekstra. Baterai tahan lama hingga 5 jam, bisa dicharge ulang menggunakan USB Type-C. Penyelamat saat kelas panas!",
+      "wa": "628999888777",
+      "ig": "gadget_kampus"
+    }
+  ]
+}
